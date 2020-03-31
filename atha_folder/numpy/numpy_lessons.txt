@@ -1,0 +1,15 @@
+⌨️ What is NumPy
+⌨️ NumPy vs Lists (speed, functionality)
+⌨️ Applications of NumPy
+⌨️ The Basics (creating arrays, shape, size, data type)
+⌨️ Accessing/Changing Specific Elements, Rows, Columns, etc (slicing)
+⌨️ Initializing Different Arrays (1s, 0s, full, random, etc...)
+⌨️ Problem #1 (How do you initialize this array?)
+⌨️ Be careful when copying variables!
+⌨️ Basic Mathematics (arithmetic, trigonometry, etc.)
+⌨️ Linear Algebra
+⌨️ Statistics
+⌨️ Reorganizing Arrays (reshape, vstack, hstack)
+⌨️ Load data in from a file
+⌨️ Advanced Indexing and Boolean Masking
+⌨️ Problem #2 (How do you index these values?)
