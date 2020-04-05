@@ -9,10 +9,10 @@ connection = pymysql.connect (host="localhost",
                                     cursorclass=pymysql.cursors.DictCursor) 
 
 
-def create_tables()
+def create_tables():
 
     with connection.cursor() as cursor:
-        table_for_countries = "create table if not exists countries (id int primary key not null auto_increment, name 							varchar(100), longitude float, latitude float)"
+        table_for_countries = "create table if not exists countries (id int primary key not null auto_increment, name 					varchar(100), longitude float, latitude float)"
 		cursor.execute(table_for_countries)
 
 		table_for_deaths = "create table if not exists deaths (id int primary key not null auto_increment, country_id int(100), foreign key(country_id) references countries(id), deaths int, date_of_death date)"
@@ -29,7 +29,7 @@ create_tables()
 def write_countries(name, longitude, latitude):
 
     with connection.cursor() as cursor:
-        enter_country = f"insert into countries (name, longitude, latitude) values ('{name}', '{longitude}', '{latitude}')"
+        enter_country = f"insert into countries (name, longitude, latitude) values ('{name}', '{longitude}', '{latitude}'"
         cursor.execute(enter_country)
 
         connection.commit()
@@ -39,7 +39,7 @@ def write_countries(name, longitude, latitude):
 def write_deaths(country_id, deaths, date_of_deaths):
 
     with connection.cursor() as cursor:
-        enter_death = f"insert into deaths (country_id, deaths, date_of_deaths) values ('{country_id}', '{deaths}', '{date_of_deaths}')"
+        enter_death = f"insert into deaths (country_id, deaths, date_of_deaths) values ('{country_id}', '{deaths}', 																			'{date_of_deaths}')"
         print(enter_death)
         cursor.execute(enter_death)
 
