@@ -13,3 +13,8 @@
 ⌨️ Load data in from a file
 ⌨️ Advanced Indexing and Boolean Masking
 ⌨️ Problem #2 (How do you index these values?)
+
+NumPy
+pandas
+matplotlib
+scikit-learn
