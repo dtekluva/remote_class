@@ -1,1 +1,0 @@
-# My_covid_data
