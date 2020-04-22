@@ -46,21 +46,21 @@ def write_country(name, lng, lat):
         
         connection.commit()
 
-def write_case(country_id, date, cases):
+# def write_case(country_id, date, cases):
 
-    with connection.cursor() as Cursor:
+#     with connection.cursor() as Cursor:
         
-        add_case = f"INSERT INTO cases (country_id, date, cases) values('{country_id}','{date}','{cases}')"
+#         add_case = f"INSERT INTO cases (country_id, date, cases) values('{country_id}','{date}','{cases}')"
 
-        Cursor.execute(add_case)
+#         Cursor.execute(add_case)
         
-        connection.commit()
+#         connection.commit()
 
 def write_case_with_deaths(country_id, date, cases, deaths):
 
     with connection.cursor() as Cursor:
         
-        add_case = f"INSERT INTO cases (country_id, date, cases, deaths) values('{country_id}','{date}','{cases}', '{deaths}')"
+        add_case = f"INSERT INTO cases_with_deaths (country_id, date, cases, deaths) values('{country_id}','{date}','{cases}', '{deaths}')"
 
         Cursor.execute(add_case)
         

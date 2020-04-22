@@ -1,27 +1,34 @@
 from db_funcs import *
 
-file = open("C:/Users/inyang/Desktop/class online/covid_data/time_series_covid19.csv")
-file = open("C:/Users/inyang/Desktop/class online/covid_data/time_series_covid19.csv")
+cases_file = open("C:/Users/INYANG/Desktop/class online/atha_folder/covid_data/time_series_covid19.csv")
+deaths_file = open("C:/Users/INYANG/Desktop/class online/atha_folder/covid_data/time_series_covid19_deaths_global.csv")
 
 countries_of_choice = ["Italy",'Jamaica','Japan','Jordan']
-heading = file.readlines(1)
+heading = cases_file.readlines(1)
+heading_deaths = deaths_file.readlines(1)
 
-for line in file.readlines():
-    line_data = line.split(",")
-    country_name = line_data[1]
+for case_line, death_line in zip(cases_file.readlines(), deaths_file.readlines()):
+    
+    case_line = case_line.split(",")
+    death_line = death_line.split(",")
+
+    country_name = case_line[1]
 
     if country_name in countries_of_choice:
         country_exists = check_country(country_name)
-    #     # print(country_exists)
 
         if country_exists:
 
-            for data in list(zip(line_data, heading[0].split(",")))[4:]:
-                # print(format_time(data[1]), data[1])
-                write_case(country_exists[0]['id'], format_time(data[1]),data[0] )
+            for data in list(zip(case_line, heading[0].split(","), death_line))[4:]:
+                print(data)
+                country_id = country_exists[0]['id']
+                date = format_time(data[1])
+                cases = data[0]
+                deaths = data[2]
+                write_case_with_deaths(country_id, date, cases, deaths)
 
         else:
-            write_country(country_name, line_data[2], line_data[3])
+            write_country(country_name, case_line[2], case_line[3])
 
 
 
